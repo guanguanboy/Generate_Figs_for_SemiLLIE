@@ -1,42 +1,58 @@
-% ÉèÖÃÎÄ¼ş¼ĞÂ·¾¶
-folder1 = 'E:\¿ÆÑĞÏîÄ¿\ÎŞ¼à¶½µÄµÍ¹âÔöÇ¿\¶Ô±È·½·¨ÊµÑé½á¹û\Ours\Visdrone\Visdrone_Input\unlabeled_test\input'; % Ìæ»»ÎªµÚÒ»¸öÎÄ¼ş¼ĞµÄÂ·¾¶
-folder2 = 'E:\¿ÆÑĞÏîÄ¿\ÎŞ¼à¶½µÄµÍ¹âÔöÇ¿\¶Ô±È·½·¨ÊµÑé½á¹û\Ours\Visdrone\semi-LLIE(Ours)\Visdrone_ckpt_mambalowlight_rampeceptual_weight_01_0626'; % Ìæ»»ÎªµÚ¶ş¸öÎÄ¼ş¼ĞµÄÂ·¾¶
+% ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+folder1 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\Ours\Visdrone\Visdrone_Input\unlabeled_test\input'; % æ›¿æ¢ä¸ºç¬¬ä¸€ä¸ªæ–‡ä»¶å¤¹çš„è·¯å¾„
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\Ours\Visdrone\semi-LLIE(Ours)\Visdrone_ckpt_mambalowlight_rampeceptual_weight_01_0626'; % æ›¿æ¢ä¸ºç¬¬äºŒä¸ªæ–‡ä»¶å¤¹çš„è·¯å¾„
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\Retinexformer\LOL_v1_visdrone\LOL_v1\RetinexFormer_Visdrone_labeled\net_g_latest'; % æ›¿æ¢ä¸ºç¬¬äºŒä¸ªæ–‡ä»¶å¤¹çš„è·¯å¾„
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\URentinexNet\visdrone_unlabeled_test_with_URetinexNet\visdrone_unlabeled_test'; % æ›¿æ¢ä¸ºç¬¬äºŒä¸ªæ–‡ä»¶å¤¹çš„è·¯å¾„
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\EnlightenGAN\test_190\images_jpg';
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\NeRCo\NeRCo_visdrone_results\pretrained_models\LSRW\test_latest\images_jpg';
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\RUAS\result_RUAS\result';
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\RetinexNet\visdrone_unlabeld_test_RetinexNet\visdrone_unlabeld_test_jpg';
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\SNR-Net\formated_LOLv1_model_on_visdrone_unlabeled_test\formated_LOLv1_model\images\output';
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\MIRNetv2\Lol_visdrone_MIRNetv2\Lol_jpg';
 
-% »ñÈ¡ÎÄ¼ş¼ĞÖĞµÄËùÓĞÍ¼ÏñÎÄ¼ş
-images1 = dir(fullfile(folder1, '*.jpg')); % ¼ÙÉèÍ¼Ïñ¸ñÊ½Îª PNG£¬¿É¸ù¾İĞèÒªĞŞ¸Ä
+%Restormer
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\Restormer\visdrone_results_Restormer\visdrone';
+
+%Semi-LLIE ablation
+%folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\Ours\Visdrone\semi-LLIE(Ours)\Visdrone_ckpt_mambalowlight_rampeceptual_weight_01_0628_01_ganloss';
+folder2 = 'E:\ç§‘ç ”é¡¹ç›®\æ— ç›‘ç£çš„ä½å…‰å¢å¼º\å¯¹æ¯”æ–¹æ³•å®éªŒç»“æœ\Ours\Visdrone\semi-LLIE(Ours)\Visdrone_ckpt_mambalowlight_rampeceptual_weight_01_0628_10_ganloss_results\Visdrone_ckpt_mambalowlight_rampeceptual_weight_01_0628_10_ganloss';
+
+
+% ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ä¼ï¿½
+images1 = dir(fullfile(folder1, '*.jpg')); % ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ê½Îª PNGï¿½ï¿½ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ş¸ï¿½
 images2 = dir(fullfile(folder2, '*.jpg'));
 
-% È·±£Á½¸öÎÄ¼ş¼ĞÖĞµÄÎÄ¼şÊıÁ¿ÏàÍ¬
+% È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬
 if length(images1) ~= length(images2)
-    error('Á½¸öÎÄ¼ş¼ĞÖĞµÄÍ¼ÏñÊıÁ¿²»Æ¥Åä¡£');
+    error('ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ğµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ä¡£');
 end
 
-% ³õÊ¼»¯ LOE ÖµÊı×é
+% ï¿½ï¿½Ê¼ï¿½ï¿½ LOE Öµï¿½ï¿½ï¿½ï¿½
 LOE_values = zeros(length(images1), 1);
 
-% ±éÀúÃ¿¶ÔÍ¬ÃûÍ¼Ïñ²¢¼ÆËã LOE Öµ
+% ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½Í¬ï¿½ï¿½Í¼ï¿½ñ²¢¼ï¿½ï¿½ï¿½ LOE Öµ
 for i = 1:length(images1)
-    % »ñÈ¡Í¼ÏñÎÄ¼şÃû
+    % ï¿½ï¿½È¡Í¼ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
     imageName1 = images1(i).name;
     imageName2 = images2(i).name;
     
-    % È·±£Í¼ÏñÎÄ¼şÃûÏàÍ¬
+    % È·ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Í¬
     if ~strcmp(imageName1, imageName2)
-        error('Í¼ÏñÎÄ¼şÃû²»Æ¥Åä: %s ºÍ %s', imageName1, imageName2);
+        error('Í¼ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½: %s ï¿½ï¿½ %s', imageName1, imageName2);
     end
     
-    % ¶ÁÈ¡Í¼Ïñ
+    % ï¿½ï¿½È¡Í¼ï¿½ï¿½
     epic = imread(fullfile(folder1, imageName1));
     ipic = imread(fullfile(folder2, imageName2));
     
-    % µ÷ÓÃ LOE_b º¯Êı¼ÆËã LOE Öµ
+    % ï¿½ï¿½ï¿½ï¿½ LOE_b ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOE Öµ
     LOE_values(i) = LOE_b(epic, ipic);
-    % ÊµÊ±´òÓ¡Í¼ÏñÃû³Æ¡¢ĞòºÅºÍ¼ÆËã³öµÄ LOE Öµ
-    fprintf('Í¼ÏñÃû³Æ: %s, ĞòºÅ: %d, LOE Öµ: %f\n', imageName1, i, LOE_values(i));
+    % ÊµÊ±ï¿½ï¿½Ó¡Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½ï¿½ï¿½ÅºÍ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOE Öµ
+    fprintf('Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: %s, ï¿½ï¿½ï¿½: %d, LOE Öµ: %f\n', imageName1, i, LOE_values(i));
 end
 
-% ¼ÆËã LOE ÖµµÄÆ½¾ùÖµ
+% ï¿½ï¿½ï¿½ï¿½ LOE Öµï¿½ï¿½Æ½ï¿½ï¿½Öµ
 average_LOE = mean(LOE_values);
 
-% Êä³ö½á¹û
-fprintf('Æ½¾ù LOE Öµ: %f\n', average_LOE);
+% ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+fprintf('Æ½ï¿½ï¿½ LOE Öµ: %f\n', average_LOE);
