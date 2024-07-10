@@ -168,7 +168,7 @@ def save_images(image_floder_name, image_name,location1=[],location2=[]):
 
 
     # 保存合并后的图片
-    output_path = output_folder_path + '/'  + image_name +  '_final.png'
+    output_path = output_father_foloder_path + '/'  + image_name +  '_final.png'
 
     new_img.save(output_path)
 

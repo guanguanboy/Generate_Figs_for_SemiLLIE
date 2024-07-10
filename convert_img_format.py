@@ -2,8 +2,8 @@ import os
 from PIL import Image
 
 # 输入文件夹路径和输出文件夹路径
-input_folder = r'E:/科研项目/无监督的低光增强/对比方法实验结果/MIRNetv2/Lol_visdrone_MIRNetv2/Lol'   # 替换为包含 PNG 图像的文件夹路径
-output_folder = r'E:/科研项目/无监督的低光增强/对比方法实验结果/MIRNetv2/Lol_visdrone_MIRNetv2/Lol_jpg' # 替换为保存 JPG 图像的文件夹路径
+input_folder = r'E:\科研项目\无监督的低光增强\对比方法实验结果\Retinexformer\RetinexFormer_LSRW\net_g_latest'   # 替换为包含 PNG 图像的文件夹路径
+output_folder = r'E:\科研项目\无监督的低光增强\对比方法实验结果\Retinexformer\RetinexFormer_LSRW\net_g_latest_jpg' # 替换为保存 JPG 图像的文件夹路径
 
 # 确保输出文件夹存在
 if not os.path.exists(output_folder):
