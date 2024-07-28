@@ -16,30 +16,14 @@ mssb_fid_visdrone = [
 39.87#32.00
 ]
 
-region_psnr_lolv2_real =  [
-20.66,
-21.56,
-22.05,
-22.02#36.28 23.62
-]
-
-
-region_psnr_lolv2_synthetic = [
-24.65,
-24.99,
-25.92,
-25.80
+mssb_fid_LSRW = [
+18.65,
+19.73,
+19.58,
+19.54
 #36.30
 ]
 
-
-region_psnr_sid =  [
-22.87,
-23.08,
-23.91,
-23.76
-#38.20
-]
 
 
 width_sample_step = ['16', '32', '64','96']
@@ -53,29 +37,14 @@ width_fid_visdrone = [
 40.06
 ]
 
-width_psnr_lolv2_real =  [
-20.15,
-21.18,
-22.05,
+#2.32
+width_psnr_LSRW =  [
+17.83,
+18.86,
+19.73, ##22.05,
 #36.30,
-21.94]
+19.62]
 
-
-width_psnr_lolv2_synthetic = [
-24.85,
-25.29,
-25.92,
-#36.38,
-25.29
-]
-
-
-width_psnr_sid =  [
-22.07,
-22.95,
-23.91,
-#38.50,
-23.47]
 
 
 mssg_sample_step = ['1', '2', '4','6']
@@ -88,28 +57,14 @@ mssg_fid_visdrone = [
 40.06
 ]
 
-sam_psnr_lolv2_real =  [
-21.48,
-21.87,
-22.05,
-#36.30
+#2.14
+mssg_psnr_LSRW =  [
+19.34,
+19.73,
+19.48,
+19.46
 ]
 
-
-sam_psnr_lolv2_synthetic = [
-25.26,
-25.59,
-25.92
-#36.38,
-]
-
-
-sam_psnr_sid =  [
-23.40,
-23.65,
-23.91
-#38.50
-]
 
 # 设置虚线样式
 line_style = '--'
@@ -142,11 +97,14 @@ axs[0].set_xlabel('Feature Width', font2)
 
 # 创建一个共享x轴但独立y轴的第二个坐标轴
 axs0_twin = axs[0].twinx()  # 注意这里使用了twinx()
-line12, = axs0_twin.plot(width_sample_step, width_psnr_lolv2_real, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
+line12, = axs0_twin.plot(width_sample_step, width_psnr_LSRW, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
 
 # 在第三个子图上绘制数据并设置标签
 line31, = axs[1].plot(mssg_sample_step, mssg_fid_visdrone, marker = 'o', color=custom_blue, label=r'Visdrone', linestyle=line_style)
-#line32, = axs[1].plot(sam_sample_step, sam_psnr_lolv2_real, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
+
+
+axs1_twin = axs[1].twinx()  # 注意这里使用了twinx()
+line32, = axs1_twin.plot(mssg_sample_step, mssg_psnr_LSRW, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
 
 #axs[2].set_title('子图3')
 #axs[2].set_ylabel('PSNR (dB)', font2)  
@@ -158,6 +116,9 @@ line21, = axs[2].plot(mssb_sample_step, mssb_fid_visdrone, marker = 'o', color=c
 #line22, = axs[2].plot(region_sample_step, region_psnr_lolv2_real, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
 
 axs2_twin = axs[2].twinx() 
+line22, = axs2_twin.plot(mssb_sample_step, mssb_fid_LSRW, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
+
+
 axs2_twin.set_ylabel('PSNR (dB)', font2)  # 设置第二个y轴的标签
 
 #axs[1].set_title('子图2')
