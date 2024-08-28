@@ -83,11 +83,13 @@ font2 = {'family' : 'Times New Roman',
 'size'   : 16,
 }
 
+y_min, y_max = 17.50, 20.00
+
 # 创建包含一行三列的图表
 fig, axs = plt.subplots(1, 3, figsize=(12, 4), sharey=True)
 
 # 在第一个子图上绘制数据并设置标签
-line11, = axs[0].plot(width_sample_step, width_fid_visdrone, marker = 'o', color=custom_blue, label=r'Visdrone', linestyle=line_style)
+line11, = axs[0].plot(width_sample_step, width_fid_visdrone, marker = 'o', markersize=10, color=custom_blue, label=r'Visdrone (FID)', linestyle=line_style, linewidth=2)
 #line12, = axs[0].plot(width_sample_step, width_psnr_lolv2_real, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
 
 #axs[0].set_title('子图1')
@@ -97,29 +99,30 @@ axs[0].set_xlabel('Feature Width', font2)
 
 # 创建一个共享x轴但独立y轴的第二个坐标轴
 axs0_twin = axs[0].twinx()  # 注意这里使用了twinx()
-line12, = axs0_twin.plot(width_sample_step, width_psnr_LSRW, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
+line12, = axs0_twin.plot(width_sample_step, width_psnr_LSRW, marker = '*', markersize=10, color=custom_green, label=r"LSRW (PSNR)", linestyle=line_style, linewidth=2)
+axs0_twin.set_ylim([y_min, y_max])
 
 # 在第三个子图上绘制数据并设置标签
-line31, = axs[1].plot(mssg_sample_step, mssg_fid_visdrone, marker = 'o', color=custom_blue, label=r'Visdrone', linestyle=line_style)
-
+line31, = axs[1].plot(mssg_sample_step, mssg_fid_visdrone, marker = 'o', markersize=10, color=custom_blue, label=r'Visdrone (FID)', linestyle=line_style, linewidth=2)
 
 axs1_twin = axs[1].twinx()  # 注意这里使用了twinx()
-line32, = axs1_twin.plot(mssg_sample_step, mssg_psnr_LSRW, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
-
+line32, = axs1_twin.plot(mssg_sample_step, mssg_psnr_LSRW, marker = '*', markersize=10, color=custom_green, label=r"LSRW (PSNR)", linestyle=line_style, linewidth=2)
+axs1_twin.set_ylim([y_min, y_max])
 #axs[2].set_title('子图3')
 #axs[2].set_ylabel('PSNR (dB)', font2)  
 axs[1].set_xlabel('Number of MSSGs', font2)
 
 
 # 在第二个子图上绘制数据并设置标签
-line21, = axs[2].plot(mssb_sample_step, mssb_fid_visdrone, marker = 'o', color=custom_blue, label=r'Visdrone', linestyle=line_style)
+line21, = axs[2].plot(mssb_sample_step, mssb_fid_visdrone, marker = 'o', markersize=10, color=custom_blue, label=r'Visdrone (FID)', linestyle=line_style, linewidth=2)
 #line22, = axs[2].plot(region_sample_step, region_psnr_lolv2_real, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
 
 axs2_twin = axs[2].twinx() 
-line22, = axs2_twin.plot(mssb_sample_step, mssb_fid_LSRW, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
+line22, = axs2_twin.plot(mssb_sample_step, mssb_fid_LSRW, marker = '*', markersize=10, color=custom_green, label=r"LSRW (PSNR)", linestyle=line_style, linewidth=2)
 
 
 axs2_twin.set_ylabel('PSNR (dB)', font2)  # 设置第二个y轴的标签
+axs2_twin.set_ylim([y_min, y_max])
 
 #axs[1].set_title('子图2')
 #axs[1].set_ylabel('PSNR (dB)', font2)  

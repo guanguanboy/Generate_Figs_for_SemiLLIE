@@ -142,7 +142,7 @@ axs[0].set_xlabel('Feature Width', font2)
 
 
 # 在第三个子图上绘制数据并设置标签
-line31, = axs[1].plot(mssg_sample_step, mssg_fid_visdrone, marker = 'o', color=custom_blue, label=r'Visdrone', linestyle=line_style)
+line31, = axs[1].plot(mssg_sample_step, mssg_fid_visdrone, marker = '*', color=custom_blue, label=r'Visdrone', linestyle=line_style)
 #line32, = axs[1].plot(sam_sample_step, sam_psnr_lolv2_real, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
 
 #axs[2].set_title('子图3')
