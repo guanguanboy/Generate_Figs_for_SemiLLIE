@@ -2,8 +2,10 @@ import matplotlib
 
 import matplotlib.pyplot as plt
 
+plt.rcParams['font.family']='Times New Roman ,SimSun '# 设置字体族，中文为SimSun，英文为Times New Roman
+plt.rcParams['font.size'] = 16
 # 准备数据
-matplotlib.rcParams['font.sans-serif'] = ['SimSun']  # 用黑体显示中文
+#matplotlib.rcParams['font.sans-serif'] = ['SimSun']  # 用黑体显示中文
 #matplotlib.rcParams['text.usetex'] = True
 
 mssb_sample_step = ['1', '2', '3','4']
@@ -93,8 +95,8 @@ line11, = axs[0].plot(width_sample_step, width_fid_visdrone, marker = 'o', marke
 #line12, = axs[0].plot(width_sample_step, width_psnr_lolv2_real, marker = 'o', color=custom_green, label=r"LSRW", linestyle=line_style)
 
 #axs[0].set_title('子图1')
-axs[0].set_ylabel('Fréchet距离(FID)', font2)  
-axs[0].set_xlabel('通道宽度', font2)  
+axs[0].set_ylabel('Fréchet距离(FID)')  
+axs[0].set_xlabel('中间特征通道个数')  
 
 
 # 创建一个共享x轴但独立y轴的第二个坐标轴
@@ -110,7 +112,7 @@ line32, = axs1_twin.plot(mssg_sample_step, mssg_psnr_LSRW, marker = '*', markers
 axs1_twin.set_ylim([y_min, y_max])
 #axs[2].set_title('子图3')
 #axs[2].set_ylabel('PSNR (dB)', font2)  
-axs[1].set_xlabel('MSSG的个数', font2)
+axs[1].set_xlabel('MSSG的个数')
 
 
 # 在第二个子图上绘制数据并设置标签
@@ -121,12 +123,12 @@ axs2_twin = axs[2].twinx()
 line22, = axs2_twin.plot(mssb_sample_step, mssb_fid_LSRW, marker = '*', markersize=10, color=custom_green, label="LSRW数据集(峰值信噪比)", linestyle=line_style, linewidth=2)
 
 
-axs2_twin.set_ylabel('峰值信噪比(dB)', font2)  # 设置第二个y轴的标签
+axs2_twin.set_ylabel('峰值信噪比(dB)')  # 设置第二个y轴的标签
 axs2_twin.set_ylim([y_min, y_max])
 
 #axs[1].set_title('子图2')
 #axs[1].set_ylabel('PSNR (dB)', font2)  
-axs[2].set_xlabel('MSSB的个数', font2)   
+axs[2].set_xlabel('MSSB的个数')   
 #axs[2].set_ylabel('PSNR (dB)', font2)  
 
 
